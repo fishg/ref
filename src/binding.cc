@@ -518,7 +518,7 @@ NAN_METHOD(ReinterpretBuffer) {
     return Nan::ThrowError("reinterpret: Cannot reinterpret from NULL pointer");
   }
 
-  size_t size = info[1]->Uint32Value(v8::Isolate::GetCurrent()->GetCurrentContext()).ToChecked();
+  size_t size = info[1]->Uint32Value();
 
   info.GetReturnValue().Set(WrapPointer(ptr, size));
 }
