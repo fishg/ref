@@ -219,7 +219,7 @@ NAN_METHOD(WriteObject) {
   Nan::Persistent<Object>* pptr = reinterpret_cast<Nan::Persistent<Object>*>(ptr);
   Local<Object> val = info[2].As<Object>();
 
-  bool persistent = info[3]->BooleanValue(v8::Isolate::GetCurrent()->GetCurrentContext()).ToChecked();
+  bool persistent = info[3]->BooleanValue();
   if (persistent) {
       (*pptr).Reset(val);
   } else {
@@ -640,8 +640,8 @@ NAN_MODULE_INIT(init) {
   SET_ALIGNOF(Object, Nan::Persistent<Object>);
 
   // exports
-  target->Set(Nan::New<v8::String>("sizeof").ToLocalChecked(), smap);
-  target->Set(Nan::New<v8::String>("alignof").ToLocalChecked(), amap);
+  target->Set(v8::Isolate::GetCurrent()->GetCurrentContext(),Nan::New<v8::String>("sizeof").ToLocalChecked(), smap);
+  target->Set(v8::Isolate::GetCurrent()->GetCurrentContext(),Nan::New<v8::String>("alignof").ToLocalChecked(), amap);
   Nan::ForceSet(target, Nan::New<v8::String>("endianness").ToLocalChecked(), Nan::New<v8::String>(CheckEndianness()).ToLocalChecked(), static_cast<PropertyAttribute>(ReadOnly|DontDelete));
   Nan::ForceSet(target, Nan::New<v8::String>("NULL").ToLocalChecked(), WrapNullPointer(), static_cast<PropertyAttribute>(ReadOnly|DontDelete));
   Nan::SetMethod(target, "address", Address);
