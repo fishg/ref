@@ -26,12 +26,21 @@
   },
   "main": "./lib/ref.js",
   "scripts": {
+    "install" : "node-pre-gyp install --fallback-to-build",
     "docs": "node docs/compile",
     "test": "mocha --gc-global --expose-gc --reporter spec --use_strict"
   },
   "dependencies": {
     "bindings": "^1.5.0",
     "debug": "*",
-    "nan": "^2.13.2"
+    "nan": "^2.13.2",
+    "node-pre-gyp": "0.6.x"
+  },
+  "binary": {
+    "module_name" : "ffi_bindings",
+    "module_path" : "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
+    "remote_path" : "./{module_name}/v{version}/{configuration}/",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "host"        : "https://ym-public.oss-cn-shenzhen.aliyuncs.com/node_prebuild"
   }
 }
