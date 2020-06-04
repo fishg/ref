@@ -26,7 +26,7 @@
   },
   "main": "./lib/ref.js",
   "scripts": {
-    "install" : "node-pre-gyp install --fallback-to-build",
+    "install" : "node-pre-gyp install --fallback-to-build --runtime=electron --target=8.3.1",
     "docs": "node docs/compile",
     "test": "mocha --gc-global --expose-gc --reporter spec --use_strict"
   },
