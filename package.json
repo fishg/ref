@@ -37,7 +37,7 @@
     "node-pre-gyp": "0.6.x"
   },
   "binary": {
-    "module_name" : "ffi_bindings",
+    "module_name" : "binding",
     "module_path" : "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
     "remote_path" : "./{module_name}/v{version}/{configuration}/",
     "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
