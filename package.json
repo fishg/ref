@@ -38,7 +38,7 @@
   },
   "binary": {
     "module_name" : "binding",
-    "module_path" : "./build/Release/",
+    "module_path" : "./build/",
     "remote_path" : "./{module_name}/v{version}/{configuration}/",
     "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
     "host"        : "https://ym-public.oss-cn-shenzhen.aliyuncs.com/node_prebuild"
