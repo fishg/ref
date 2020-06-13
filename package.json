@@ -17,7 +17,7 @@
     "byte",
     "64"
   ],
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
   "repository": {
@@ -26,7 +26,7 @@
   },
   "main": "./lib/ref.js",
   "scripts": {
-    "install" : "node-pre-gyp install --fallback-to-build --runtime=electron --target=8.3.1",
+    "install": "node-pre-gyp install --fallback-to-build --runtime=electron --target=8.3.1",
     "docs": "node docs/compile",
     "test": "mocha --gc-global --expose-gc --reporter spec --use_strict"
   },
@@ -37,10 +37,10 @@
     "node-pre-gyp": "0.12.x"
   },
   "binary": {
-    "module_name" : "binding",
-    "module_path" : "./build/",
-    "remote_path" : "./{module_name}/v{version}/{configuration}/",
+    "module_name": "binding",
+    "module_path": "./build/",
+    "remote_path": "./{module_name}/v{version}/{configuration}/",
     "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
-    "host"        : "https://ym-public.oss-cn-shenzhen.aliyuncs.com/node_prebuild"
+    "host": "https://ym-public.oss-cn-shenzhen.aliyuncs.com/node_prebuild"
   }
 }
